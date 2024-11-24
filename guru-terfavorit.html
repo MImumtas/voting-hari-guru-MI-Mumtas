@@ -244,7 +244,7 @@
         })
         .then(response => response.json())  // Proses response dari API
         .then(data => {
-            alert('Vote berhasil!');
+            console.log('Vote berhasil!', data);
         })
         .catch(error => {
             console.error('Error:', error);
