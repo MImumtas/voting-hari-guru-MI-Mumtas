@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Paling Terfavorit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://img.freepik.com/premium-vector/handdrawn-vector-illustration-business-education-concept_1332465-7786.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: rgba(255, 255, 255, 0.8);
+            height: auto;
+        }
+
+        body::before {
+            content: ''; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: -1; 
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            height: 120vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #votingSection {
+            width: 1200px;
+            height: 690px;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-gap: 20px;
+            padding: 10px;
+            margin-top: 30px;
+        }
+
+        .box {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            height: 140px;
+            max-height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1:1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .box img {
+            max-width: 100%;
+            max-height: 120%;
+            object-fit: contain; cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .box:active img{
+            animation: pulse 0.5s ease-in-out;
+            transform: scale(1:1);
+            opacity: 0.8;
+        }
+
+        .box:hover {
+            background-color: #007bff;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 8px;
+            position: relative;
+            top: 80px;
+            margin-bottom: 40px;
+        }
+
+        .subtitle {
+            background-color: #d9534f;
+            color: white;
+            padding: 15px 30px;
+            margin-top: 30px;
+            display: inline-block;
+            border-radius: 8px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Pilih Guru Terfavorit</div>
+        <div class="subtitle">PILIH SALAH SATU</div>
+        <div id="votingSection">
+            <!-- Kotak voting -->
+            <div class="box" id="guru-1" onclick="vote('Guru Terfavorit', 'PAK KHOLID')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20KHOLID.png" alt="PAK KHOLID">
+            </div>
+            <div class="box" id="guru-2" onclick="vote('Guru Terfavorit', 'PAK MUJIB')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20MUJIB.png" alt="PAK MUJIB">
+            </div>
+            <div class="box" id="guru-3" onclick="vote('Guru Terfavorit', 'PAK JAKA')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20JAKA.png" alt="PAK JAKA">
+            </div>
+            <div class="box" id="guru-4" onclick="vote('Guru Terfavorit', 'PAK RONI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20RONI.png" alt="PAK RONI">
+            </div>
+            <div class="box" id="guru-5" onclick="vote('Guru Terfavorit', 'PAK FARIHUN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20FARIHUN.png" alt="PAK FARIHUN">
+            </div>
+            <div class="box" id="guru-6" onclick="vote('Guru Terfavorit', 'BU INDRA')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20INDRA.png" alt="BU INDRA">
+            </div>
+            <div class="box" id="guru-7" onclick="vote('Guru Terfavorit', 'BU SITI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20SITI.png" alt="BU SITI">
+            </div>
+            <div class="box" id="guru-8" onclick="vote('Guru Terfavorit', 'BU NOVA')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20NOVA.png" alt="BU NOVA">
+            </div>
+            <div class="box" id="guru-9" onclick="vote('Guru Terfavorit', 'BU DELA')">
+                <img src="https://raw.githubusercontent.com/MImumtas/foto-dela/refs/heads/main/WhatsApp%20Image%202024-11-24%20at%2014.35.23.jpeg" alt="BU DELA">
+            </div>
+            <div class="box" id="guru-10" onclick="vote('Guru Terfavorit', 'BU MARATUS)">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20MAR'ATUS.png" alt="BU MARATUS">
+            </div>
+            <div class="box" id="guru-11" onclick="vote('Guru Terfavorit', 'BU IIN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20IIN.png" alt="BU IIN">
+            </div>
+            <div class="box" id="guru-12" onclick="vote('Guru Terfavorit', 'BU ANI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20ANI.png" alt="BU ANI">
+            </div>
+            <div class="box" id="guru-13" onclick="vote('Guru Terfavorit', 'BU NINIK')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20NINIK.png" alt="BU NINIK">
+            </div>
+            <div class="box" id="guru-14" onclick="vote('Guru Terfavorit', 'PAK MAULANA')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20MULANA.png" alt="PAK MAULANA">
+            </div>
+            <div class="box" id="guru-15" onclick="vote('Guru Terfavorit', 'PAK DAUS')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20DAUS.png" alt="PAK DAUS">
+            </div>
+            <div class="box" id="guru-16" onclick="vote('Guru Terfavorit', 'BU HAMIDAH')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20HAMIDAH.png" alt="BU HAMIDAH">
+            </div>
+            <div class="box" id="guru-17" onclick="vote('Guru Terfavorit', 'BU DIAH')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20DI'AH.png" alt="BU DIAH">
+            </div>
+            <div class="box" id="guru-18" onclick="vote('Guru Terfavorit', 'BU LELI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20LELI.png" alt="BU LELI">
+            </div>
+            <div class="box" id="guru-19" onclick="vote('Guru Terfavorit', 'BU WID')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20WID.png" alt="BU WID">
+            </div>
+            <div class="box" id="guru-20" onclick="vote('Guru Terfavorit', 'BU NIKMAH')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20NIKMAH.png" alt="BU NIKMAH">
+            </div>
+            <div class="box" id="guru-21" onclick="vote('Guru Terfavorit', 'PAK FARID')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20FARID.png" alt="PAK FARID">
+            </div>
+            <div class="box" id="guru-22" onclick="vote('Guru Terfavorit', 'BU RIRIN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20RIRIN.png" alt="BU RIRIN">
+            </div>
+            <div class="box" id="guru-23" onclick="vote('Guru Terfavorit', 'BU SILFI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20SILFI.png" alt="BU SILFI">
+            </div>
+            <div class="box" id="guru-24" onclick="vote('Guru Terfavorit', 'PAK MAGHFUR')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20MAGHFUR.png" alt="PAK MAGHFUR">
+            </div>
+            <div class="box" id="guru-25" onclick="vote('Guru Terfavorit', 'BU NELI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20NELI.png" alt="BU NELI">
+            </div>
+            <div class="box" id="guru-26" onclick="vote('Guru Terfavorit', 'PAK LUKMAN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20LUKMAN.png" alt="PAK LUKMAN">
+            </div>
+            <div class="box" id="guru-27" onclick="vote('Guru Terfavorit', 'BU KHOLILAH')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20KHOLILAH.png" alt="BU KHOLILAH">
+            </div>
+            <div class="box" id="guru-28" onclick="vote('Guru Terfavorit', 'PAK SHOFAN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20SHOFAN.png" alt="PAK SHOFAN">
+            </div>
+            <div class="box" id="guru-29" onclick="vote('Guru Terfavorit', 'PAK ASYHAD')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20ASYHAD.png" alt="PAK ASYHAD">
+            </div>
+            <div class="box" id="guru-30" onclick="vote('Guru Terfavorit', 'PAK MUBIN')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20MUBIN.png" alt="PAK MUBIN">
+            </div>
+            <div class="box" id="guru-31" onclick="vote('Guru Terfavorit', 'PAK HAR')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/PAK%20HAR.png" alt="PAK HAR">
+            </div>
+            <div class="box" id="guru-32" onclick="vote('Guru Terfavorit', 'BU ROHANI')">
+                <img src="https://raw.githubusercontent.com/jefry24d/assets-baru/refs/heads/main/BU%20ROHANI.png" alt="BU ROHANI">
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Fungsi untuk mencatat voting
+    function vote(kategori, guruName) {
+        // Data yang akan dikirim ke API
+        const data = {
+            guru: guruName,     // Nama guru yang dipilih
+            kategori: kategori, // Kategori voting (misalnya 'Guru Terdisiplin', 'Guru Terramah', 'Guru Terfavorit')
+            suara: 1            // Suara yang diberikan, 1 berarti menambah 1 suara
+        };
+
+        // Kirimkan data suara ke SheetDB API
+        fetch('https://sheetdb.io/api/v1/hnqcs04i9arub', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // Kirimkan data yang sudah dipersiapkan
+        })
+        .then(response => response.json())  // Proses response dari API
+        .then(data => {
+            alert('Vote berhasil!');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Gagal memberikan suara.');
+        });
+
+        // Arahkan kembali ke halaman index setelah 2 detik
+        setTimeout(function() {
+            window.location.href = 'index.html'; // Ganti dengan halaman yang ingin diarahkan
+        }, 2000); // Waktu tunggu 2 detik sebelum pengalihan halaman
+    }
+</script>
+
+</body>
+</html>
